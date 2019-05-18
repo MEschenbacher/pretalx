@@ -1,3 +1,13 @@
+import backtrace
+
+backtrace.hook(
+    reverse=False,
+    align=False,
+    strip_path=False,
+    enable_on_envvar_only=False,
+    on_tty=False,
+    conservative=False,
+    styles={})
 import os
 from contextlib import suppress
 from urllib.parse import urlparse
