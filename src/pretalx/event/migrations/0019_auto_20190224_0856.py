@@ -9,7 +9,7 @@ def fix_update_template(apps, schema_editor):
         UPDATE_TEXT,
     )
     Event = apps.get_model('event', 'Event')
-    for event in Event.objects.all():
+    for event in Event.objects.filter(update_template__isnull=False):
         template = event.update_template
         template.subject = UPDATE_SUBJECT
         template.text = UPDATE_TEXT
